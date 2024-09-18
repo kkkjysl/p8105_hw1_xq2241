@@ -1,7 +1,7 @@
 ---
 title: "p8105_hw1_xq2241"
 author: "Xinghao Qiao"
-date: 2024-09-13
+date: 2024-09-17
 output: github_document
 ---
 
@@ -47,9 +47,11 @@ ggsave("penguin_scatterplot.png", plot = penguin_p)
 # Question 2
 
 First, we create a data frame,
-```{r}
+```{r eval = FALSE}
 library(tidyverse)
+```
 
+```{r}
 # Create a random sample of size 10 from a standard Normal distribution
 set.seed(300)  
 random_s <- rnorm(10)
@@ -69,15 +71,27 @@ frame
 
 
 ```
-Then, we try to calculate the mean of each varialbe,
+Then we try to calculate the mean for each varialbe. 
+
+* random sample;
 ```{r}
 mean(frame$random_s)       # This works, since it's numeric
+```
+* logical vector;
+```{r}
 mean(frame$logical_vector)      # This works, as TRUE is 1 and FALSE is 0
+```
+* character vector;
+```{r}
 mean(frame$character_vector)    # This doesn't work, since the varialbe are characters
+```
+* factor vector;
+```{r}
 mean(frame$factor_vector)       # This doesn't work, as factors are 3 categorical
 
 ```
 In this case, only random samples and logicla vector can be caculated, because the rest two varialbes are not numeric.
+
 Now we try to use 'as.numeric' function to the logical, character, and factor variables. Logical vector and factor vector can be caculated, but character vector can not be calculated.
 ```{r eval = FALSE}
 
