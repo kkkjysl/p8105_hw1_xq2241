@@ -2,7 +2,7 @@
 title: "p8105_hw1_xq2241"
 author: "Xinghao Qiao"
 date: 2024-09-13
-output: html_document
+output: github_document
 ---
 
 
